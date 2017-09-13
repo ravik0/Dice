@@ -25,10 +25,8 @@ void mousePressed()
   diceNumber = 0;
 }
 class Die {
-  boolean dice1, dice2, dice3, dice4, dice5, dice6;
   int myX, myY;
   int diceRoll = (int)(Math.random()*6)+1;
-  int Stupid = diceRoll;
 	Die(int x, int y) //constructor
 	{
     myX = x;
