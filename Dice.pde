@@ -2,13 +2,13 @@ int diceNumber;
 int time = 0;
 int diceFinal = diceNumber;
 int dice1,dice2,dice3,dice4,dice5,dice6; //use to bar graph
-void setup()
-{
+int avgRoll;
+int rollCount;
+void setup() {
   size(400,400);
-	noLoop();
+  noLoop();
 }
-void draw()
-{
+void draw() {
   background(160);
   for (int y = 10; y < 320; y+=40) {
     for(int x = 10; x < 400; x+=50) {
@@ -19,6 +19,12 @@ void draw()
   text("Roll Count: " +  diceNumber, 150,350);
   diceFinal+=diceNumber;
   text("Total Roll Count: " + diceFinal, 150, 370);
+  avgRoll+=diceNumber;
+  if(rollCount >=1) {
+    avgRoll/=2;
+  }
+  text("Average Roll: " + avgRoll, 150,390);
+  text("Number of Rolls: " + rollCount, 280,350);
   fill(255,0,0);
   //statistic bars
   rect(10,360,10,-dice1);
@@ -44,8 +50,7 @@ void draw()
   text("5",70,375);
   text("6",85,375);
 }
-void mousePressed()
-{
+void mousePressed() {
   dice1 = 0;
   dice2 = 0;
   dice3 = 0;
@@ -54,12 +59,12 @@ void mousePressed()
   dice6 = 0;
 	redraw();
   diceNumber = 0;
+  rollCount++;
 }
 class Die {
   int myX, myY;
   int diceRoll = (int)(Math.random()*6)+1;
-	Die(int x, int y) //constructor
-	{
+	Die(int x, int y) { 
     myX = x;
     myY = y;
 	}
