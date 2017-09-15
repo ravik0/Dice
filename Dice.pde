@@ -57,9 +57,9 @@ void mousePressed() {
   dice4 = 0;
   dice5 = 0;
   dice6 = 0;
-	redraw();
-  diceNumber = 0;
   rollCount++;
+   diceNumber = 0;
+	redraw();
 }
 class Die {
   int myX, myY;
