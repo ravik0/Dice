@@ -26,7 +26,7 @@ void draw() {
   if(rollCount >=1) {
     avgRollFunc();
   }
-  text("Average Roll: " + avgRoll, 150,390);
+  text("Average Roll: " + (int)avgRoll, 150,390);
   text("Number of Rolls: " + rollCount, 280,350);
   fill(255,0,0);
   //statistic bars
