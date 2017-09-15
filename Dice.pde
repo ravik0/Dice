@@ -62,6 +62,11 @@ void mousePressed() {
   dice6 = 0;
   rollCount++;
   diceNumber = 0;
+  if (rollCount == 99) {
+    rollCount = 0;
+    avgRoll = 0;
+    diceFinal = 0;
+  }
 	redraw();
 }
 class Die {
