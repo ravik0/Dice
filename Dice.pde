@@ -8,6 +8,9 @@ void setup() {
   size(400,400);
   noLoop();
 }
+int avgRollFunc() {
+  return avgRoll/=2;
+}
 void draw() {
   background(160);
   for (int y = 10; y < 320; y+=40) {
@@ -21,7 +24,7 @@ void draw() {
   text("Total Roll Count: " + diceFinal, 150, 370);
   avgRoll+=diceNumber;
   if(rollCount >=1) {
-    avgRoll/=2;
+    avgRollFunc();
   }
   text("Average Roll: " + avgRoll, 150,390);
   text("Number of Rolls: " + rollCount, 280,350);
@@ -58,7 +61,7 @@ void mousePressed() {
   dice5 = 0;
   dice6 = 0;
   rollCount++;
-   diceNumber = 0;
+  diceNumber = 0;
 	redraw();
 }
 class Die {
